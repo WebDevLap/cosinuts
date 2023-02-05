@@ -8,7 +8,7 @@ export const App: React.FC = () => {
     <div className="wrapper">
       <Header/>
       <Routes>
-        <Route path='/' element={<HomePage/>}/>
+        <Route path='/cosinuts/' element={<HomePage/>}/>
       </Routes>
     </div>
   )
