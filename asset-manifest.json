@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/cosinuts/static/css/main.092f3be3.css",
+    "main.js": "/cosinuts/static/js/main.b73ff781.js",
+    "static/media/cosinuts.png": "/cosinuts/static/media/cosinuts.2ac67643f8fbf974f7dd.png",
+    "static/media/card-img.jpg": "/cosinuts/static/media/card-img.8c99cbd5b007870fcd03.jpg",
+    "static/media/cosinuts-mini.png": "/cosinuts/static/media/cosinuts-mini.ece7955e46ddcf8673fb.png",
+    "static/media/logo.svg": "/cosinuts/static/media/logo.594dc62e9fe194d7ef873d5cee29f41c.svg",
+    "index.html": "/cosinuts/index.html",
+    "static/media/search.svg": "/cosinuts/static/media/search.3bcfed0d4e5cc002331f.svg",
+    "static/media/phone.svg": "/cosinuts/static/media/phone.c1ec3ae1076c277dbb10.svg",
+    "main.092f3be3.css.map": "/cosinuts/static/css/main.092f3be3.css.map",
+    "main.b73ff781.js.map": "/cosinuts/static/js/main.b73ff781.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.092f3be3.css",
+    "static/js/main.b73ff781.js"
+  ]
+}
