@@ -1,21 +1,36 @@
 import React from 'react';
 import cardImg from '../assets/images/card-img.jpg';
 
-export const Card: React.FC = () => {
+interface CardProps {
+  id: number;
+  title: string;
+  subtitle: string;
+  price: number;
+  priceWithDiscount: number;
+  imageUrl: string;
+  category: number;
+}
+
+export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWithDiscount, imageUrl, category}) => {
   const [inCart, setInCart] = React.useState<boolean>(false)
   const [likeIsActive, setLikeIsActive] = React.useState<boolean>(false)
   
 
   return (
     <div className="card">
+      {
+        +((price-priceWithDiscount)*100).toFixed(2) === 0.00 ? <span></span> :
+        <span className="discount">Скидка {((price-priceWithDiscount)*1).toFixed(2)}%</span>
+      }
+      {/* <span className="discount">Скидка {((price-priceWithDiscount)*100).toFixed(2)}%</span> */}
       <div className="card__img">
-        <img src={cardImg} alt="" />
+        <img src={imageUrl} alt="image" />
       </div>
-      <div className="card__title">Абрикосы сушенные</div>
-      <div className="card__subtitle">Свежие Сушенные абрикосы в герметичной упаковке от фирмы</div>
+      <div className="card__title">{title}</div>
+      <div className="card__subtitle">{subtitle}</div>
       <div className="card__prices">
-        <div className="card-prices__price">От 322.00 Р</div>
-        <div className="card-prices__discount">От 450.00 Р</div>
+        <div className="card-prices__price">От {priceWithDiscount.toFixed(2)} Р</div>
+        <div className="card-prices__discount">От {price.toFixed(2)} Р</div>
       </div>
       <div className="card__buttons">
         <div className="card-buttons__lines">
