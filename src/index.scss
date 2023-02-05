@@ -467,15 +467,10 @@ body {
           }
           .home-page-content__cards {
             display: grid;
-            grid-template-columns: repeat(auto-fill, 410px);
-            grid-template-areas: 'card' 'card' 'card';
-            grid-row-gap: 26px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             @include adaptiv-property('margin-bottom', 105, 20);
-            @include adaptiv-property('grid-column-gap', 68, 15);
-            @include adaptiv-property('grid-row-gap', 26, 15);
-            & > div {
-              grid-area: 'card';
-            }
+            @include adaptiv-property('grid-column-gap', 22, 15);
+            @include adaptiv-property('grid-row-gap', 68, 15);
           }
           .home-page-content__sort-list {
             display: flex;
@@ -559,11 +554,12 @@ body {
   border-radius: 26.7px;
   display: inline-block;
   max-width: 410px;
+  width: 100%;
   .card__img {
     @include adaptiv-property('margin-bottom', 22.7, 16.7);
 
     img {
-      max-width: 380px;
+      // max-width: 380px;
       width: 100%;
       border-radius: 26.7px;
     }
@@ -621,8 +617,8 @@ body {
       background-color: #ffffff;
       border-radius: 13px;
 
-      @include adaptiv-property('width', 55, 30);
-      @include adaptiv-property('height', 55, 30);
+      @include adaptiv-property('width', 55, 25);
+      @include adaptiv-property('height', 55, 20);
     }
 
     .card-buttons__lines {
