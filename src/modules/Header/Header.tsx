@@ -4,22 +4,17 @@ import { NavLink } from 'react-router-dom';
 import { useAppSelector } from '../../store/store';
 import { setNavIsActive } from '../../store/slices/headerSlice';
 import { useDispatch } from 'react-redux/es/exports';
-import { NavItems } from './components/NavItems';
 
 interface HeaderProps {}
 
 export const Header: React.FC<HeaderProps> = () => {
   const navIsActive = useAppSelector((state) => state.header.navIsActive);
   const dispatch = useDispatch();
-  const othersItems: string[] = ['+7 (900) 232 32-32', 'Избранное', 'Корзина'];
+  const navRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     navIsActive ? document.body.classList.add('hidden') : document.body.classList.remove('hidden');
-    document.body.addEventListener('click', function(e){
-      dispatch(setNavIsActive(!navIsActive));
-    })
   }, [navIsActive]);
-
   return (
     <header className="header">
       <div className="header__container _container">
@@ -27,12 +22,16 @@ export const Header: React.FC<HeaderProps> = () => {
           <img src={logo} alt="logo" />
         </NavLink>
         <div
+          ref={navRef}
+          onClick={() => {
+            dispatch(setNavIsActive(!navIsActive))
+          }}
           className={navIsActive ? 'header__burger-menu active' : 'header__burger-menu'}>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <nav className={navIsActive ? 'header__nav active' : 'header__nav'}>
+        <nav className={navIsActive ? 'header__nav active' : 'header__nav'} onClick={() => dispatch(setNavIsActive(false))}>
           <ul className="header-nav__nav-list">
             <li className="header-nav__nav-item">
               <NavLink to="/cosinuts/" className="header-nav__nav-link">

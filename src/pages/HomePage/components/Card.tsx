@@ -19,7 +19,7 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
   return (
     <div className="card">
       {
-        +((price-priceWithDiscount)*100).toFixed(2) === 0.00 ? <span></span> :
+        +(priceWithDiscount/price).toFixed(2) === 0.00 ? <span></span> :
         <span className="discount">Скидка {((price-priceWithDiscount)*1).toFixed(2)}%</span>
       }
       {/* <span className="discount">Скидка {((price-priceWithDiscount)*100).toFixed(2)}%</span> */}

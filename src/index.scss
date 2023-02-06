@@ -564,7 +564,7 @@ body {
     padding: 5px 10px;
     display: inline-block;
     position: absolute;
-    top: -20px;
+    top: -15px;
     color: #fff;
     font-weight: 500;
 
@@ -581,6 +581,13 @@ body {
 
     &::after{
       content: '';
+      position: absolute;
+      display: inline-block;
+      left: 100%;
+      bottom: 0;
+      border-right: 15px solid transparent;
+      border-left: 15px solid #f90000;
+      border-top: 15px solid transparent;
     }
   }
 
