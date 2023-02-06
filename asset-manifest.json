@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cosinuts/static/css/main.77a84531.css",
-    "main.js": "/cosinuts/static/js/main.3d135f1f.js",
+    "main.css": "/cosinuts/static/css/main.46f920af.css",
+    "main.js": "/cosinuts/static/js/main.5da35700.js",
     "static/media/cosinuts.png": "/cosinuts/static/media/cosinuts.2ac67643f8fbf974f7dd.png",
     "static/media/cosinuts-mini.png": "/cosinuts/static/media/cosinuts-mini.ece7955e46ddcf8673fb.png",
     "static/media/big-logo.svg": "/cosinuts/static/media/big-logo.2e89ca6d24d42bd41d9530152450707d.svg",
@@ -11,11 +11,11 @@
     "static/media/map.svg": "/cosinuts/static/media/map.d9524ba6afcb1471b926.svg",
     "index.html": "/cosinuts/index.html",
     "static/media/search.svg": "/cosinuts/static/media/search.3bcfed0d4e5cc002331f.svg",
-    "main.77a84531.css.map": "/cosinuts/static/css/main.77a84531.css.map",
-    "main.3d135f1f.js.map": "/cosinuts/static/js/main.3d135f1f.js.map"
+    "main.46f920af.css.map": "/cosinuts/static/css/main.46f920af.css.map",
+    "main.5da35700.js.map": "/cosinuts/static/js/main.5da35700.js.map"
   },
   "entrypoints": [
-    "static/css/main.77a84531.css",
-    "static/js/main.3d135f1f.js"
+    "static/css/main.46f920af.css",
+    "static/js/main.5da35700.js"
   ]
 }
