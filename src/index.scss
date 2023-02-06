@@ -838,6 +838,7 @@ body {
     .additional__list {
       display: flex;
       align-items: center;
+      padding: 10px;
       .additional__item {
         .additional__link {
           font-size: 18px;
@@ -878,6 +879,11 @@ body {
         }
       }
     }
+  }
+}
+@media(max-width: 1000px){
+  .nav{
+    display: none;
   }
 }
 
@@ -1027,7 +1033,6 @@ body {
 
       @include adaptiv-property('font-size', 72, 26);
       @include adaptiv-property('line-height', 84, 42);
-
     }
     .delivery__subtitle {
       color: #252525;
@@ -1044,6 +1049,72 @@ body {
       // max-width: 1126px;
       @include adaptiv-property('margin-bottom', 100, 30);
 
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+
+.shops {
+  .shops__container {
+    .shops__title {
+      @include adaptiv-property('margin-bottom', 75, 20);
+      @include adaptiv-property('margin-top', 105, 40);
+
+      @include adaptiv-property('font-size', 72, 36);
+      @include adaptiv-property('line-height', 84, 42);
+
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #343030;
+      text-align: center;
+    }
+    .shops__list {
+      .shops__item {
+        display: flex;
+
+        @include adaptiv-property('margin-bottom', 75, 43);
+        .shops-item__img {
+          background-color: #C4C4C4;
+          border-radius: 25px;
+          width: 100%;
+
+          @include adaptiv-property('max-width', 493, 253);
+          @include adaptiv-property('height', 300, 154);
+          @include adaptiv-property('margin-right', 75, 0);
+        }
+        .shops-item__text {
+          font-weight: 400;
+          letter-spacing: 1px;
+          color: #252525;
+          width: 100%;
+          overflow: auto;
+
+          @include adaptiv-property('height', 300, 154);
+          @include adaptiv-property('font-size', 23.7, 14);
+          @include adaptiv-property('line-height', 50, 24);
+        }
+      }
+      @media (max-width: 747px){
+        .shops__item{
+          flex-direction: column;
+          align-items: center;
+
+          .shops-item__img{
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: 18px;
+          }
+          .shops-item__text{
+            @include adaptiv-property('max-width', 493, 253);
+            @include adaptiv-property('height', 300, 100);
+          }
+        }
+      }
+    }
+    .shops__img {
+      text-align: center;
       img{
         width: 80%;
       }

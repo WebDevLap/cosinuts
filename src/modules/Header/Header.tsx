@@ -18,7 +18,7 @@ export const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="header">
       <div className="header__container _container">
-        <NavLink to="/" className="header__logo">
+        <NavLink to="/cosinuts/" className="header__logo">
           <img src={logo} alt="logo" />
         </NavLink>
         <div

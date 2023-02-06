@@ -7,6 +7,7 @@ import { Nav } from './components/Nav';
 import { Footer } from './modules/Footer/Footer';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { DeliveryPage } from './pages/DeliveryPage/DeliveryPage';
+import { ShopsPage } from './pages/ShopsPage/ShopsPage';
 
 export const App: React.FC = () => {
   return(
@@ -16,6 +17,7 @@ export const App: React.FC = () => {
         <Route path='/cosinuts/' element={<HomePage/>}/>
         <Route path='/cosinuts/aboutUs' element={<AboutPage/>}/>
         <Route path='/cosinuts/aboutDelivery' element={<DeliveryPage/>}/>
+        <Route path='/cosinuts/shops' element={<ShopsPage/>}/>
         <Route path='*' element={<NotFoundPage/>}/>
       </Routes>
       <Nav/>
