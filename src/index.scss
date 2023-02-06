@@ -988,11 +988,10 @@ body {
       @include adaptiv-property('font-size', 125, 30);
       margin-bottom: 10px;
       text-align: center;
-
     }
     .not-fount-page__img {
       margin-bottom: 10px;
-      img{
+      img {
         border-radius: 20px;
         width: 100%;
       }
@@ -1011,6 +1010,43 @@ body {
       font-weight: 600px;
       border-radius: 5px;
       text-align: center;
+    }
+  }
+}
+
+.delivery {
+  .delivery__container {
+    .delivery__title {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #343030;
+      text-align: center;
+
+      @include adaptiv-property('margin-top', 105, 40);
+      @include adaptiv-property('margin-bottom', 35, 42);
+
+      @include adaptiv-property('font-size', 72, 26);
+      @include adaptiv-property('line-height', 84, 42);
+
+    }
+    .delivery__subtitle {
+      color: #252525;
+      letter-spacing: 1px;
+      font-weight: 400;
+
+      @include adaptiv-property('margin-bottom', 46, 65);
+      @include adaptiv-property('font-size', 23.7, 12);
+      @include adaptiv-property('line-height', 50, 24);
+    }
+    .delivery__img {
+      display: flex;
+      justify-content: center;
+      // max-width: 1126px;
+      @include adaptiv-property('margin-bottom', 100, 30);
+
+      img{
+        width: 80%;
+      }
     }
   }
 }
