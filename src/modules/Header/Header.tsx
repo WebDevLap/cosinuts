@@ -68,10 +68,10 @@ export const Header: React.FC<HeaderProps> = () => {
             <NavLink to="/cosinuts" className="header-nav__others-item">
               <span className="header-nav__others-link">+7 (900) 232 32-32</span>
             </NavLink>
-            <NavLink to="/cosinuts" className="header-nav__others-item">
+            <NavLink to="/cosinuts/liked" className="header-nav__others-item">
               <span className="header-nav__others-link">Избранное</span>
             </NavLink>
-            <NavLink to="/cosinuts" className="header-nav__others-item" data-cart-total={3}>
+            <NavLink to="/cosinuts/cart" className="header-nav__others-item" data-cart-total={3}>
               <span className="header-nav__others-link">Корзина</span>
             </NavLink>
           </ul>

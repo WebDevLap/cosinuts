@@ -19,8 +19,8 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
   return (
     <div className="card">
       {
-        +(priceWithDiscount/price).toFixed(2) === 0.00 ? <span></span> :
-        <span className="discount">Скидка {((price-priceWithDiscount)*1).toFixed(2)}%</span>
+        +((1 - priceWithDiscount / price) * 100).toFixed(2) === 0.00 ? <span></span> :
+        <span className="discount">Скидка {((1 - priceWithDiscount / price) * 100).toFixed(2)}%</span>
       }
       {/* <span className="discount">Скидка {((price-priceWithDiscount)*100).toFixed(2)}%</span> */}
       <div className="card__img">
@@ -30,13 +30,17 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
       <div className="card__subtitle">{subtitle}</div>
       <div className="card__prices">
         <div className="card-prices__price">От {priceWithDiscount.toFixed(2)} Р</div>
-        <div className="card-prices__discount">От {price.toFixed(2)} Р</div>
+        {
+          price === priceWithDiscount ? <span></span> : 
+          <div className="card-prices__discount">От {price.toFixed(2)} Р</div>
+        } {/* если цена и цена со скидкой равны то возвращает обычный span */}
+        
       </div>
       <div className="card__buttons">
         <div className="card-buttons__lines">
           <svg
-            width="21"
-            height="15"
+            width="31"
+            height="25"
             viewBox="0 0 21 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -56,8 +60,8 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
         </div>
         <div className="card-buttons__search">
           <svg
-            width="14"
-            height="15"
+            width="24"
+            height="25"
             viewBox="0 0 14 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -70,8 +74,8 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
         </div>
         <div className={likeIsActive ? "card-buttons__like active" : "card-buttons__like"} onClick={() => setLikeIsActive(!likeIsActive)}>
           <svg
-            width="20"
-            height="18"
+            width="30"
+            height="28"
             viewBox="0 0 20 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg">
