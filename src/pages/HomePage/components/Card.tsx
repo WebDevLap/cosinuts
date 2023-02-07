@@ -1,5 +1,4 @@
 import React from 'react';
-import cardImg from '../assets/images/card-img.jpg';
 
 interface CardProps {
   id: number;
@@ -19,8 +18,8 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
   return (
     <div className="card">
       {
-        +((1 - priceWithDiscount / price) * 100).toFixed(2) === 0.00 ? <span></span> :
-        <span className="discount">Скидка {((1 - priceWithDiscount / price) * 100).toFixed(2)}%</span>
+        +((1 - priceWithDiscount / price) * 100).toFixed(0) === 0 ? <span></span> :
+        <span className="discount">Скидка {((1 - priceWithDiscount / price) * 100).toFixed(0)}%</span>
       }
       {/* <span className="discount">Скидка {((price-priceWithDiscount)*100).toFixed(2)}%</span> */}
       <div className="card__img">

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import logo from '../../modules/Header/assets/images/logo.svg'
 
 export const Footer: React.FC = () => {

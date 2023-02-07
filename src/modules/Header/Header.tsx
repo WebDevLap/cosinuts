@@ -1,16 +1,35 @@
 import React from 'react';
 import logo from './assets/images/logo.svg';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../store/store';
+
 import { setNavIsActive } from '../../store/slices/headerSlice';
-import { useDispatch } from 'react-redux/es/exports';
 
-interface HeaderProps {}
+type NavType = {
+  name: string;
+  link: string;
+  dataCartTotal?: number;
+};
 
-export const Header: React.FC<HeaderProps> = () => {
-  const navIsActive = useAppSelector((state) => state.header.navIsActive);
+export const Header: React.FC = () => {
   const dispatch = useDispatch();
-  const navRef = React.useRef<HTMLDivElement>(null)
+
+  const navIsActive = useAppSelector((state) => state.header.navIsActive);
+  const navRef = React.useRef<HTMLDivElement>(null);
+  const navList: NavType[] = [
+    { name: 'Главная', link: '/' },
+    { name: 'Каталог', link: '/catalog' },
+    { name: 'О нас', link: '/aboutUs' },
+    { name: 'О доставке', link: '/aboutDelivery' },
+    { name: 'Магазины', link: '/shops' },
+    { name: 'Контакты', link: '/contacts' },
+  ];
+  const othersList: NavType[] = [
+    { name: '+7 (900) 232 32-32', link: '/' },
+    { name: 'Избранное', link: '/liked' },
+    { name: 'Корзина', link: '/cart', dataCartTotal: 3 },
+  ];
 
   React.useEffect(() => {
     navIsActive ? document.body.classList.add('hidden') : document.body.classList.remove('hidden');
@@ -24,56 +43,35 @@ export const Header: React.FC<HeaderProps> = () => {
         <div
           ref={navRef}
           onClick={() => {
-            dispatch(setNavIsActive(!navIsActive))
+            dispatch(setNavIsActive(!navIsActive));
           }}
           className={navIsActive ? 'header__burger-menu active' : 'header__burger-menu'}>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <nav className={navIsActive ? 'header__nav active' : 'header__nav'} onClick={() => dispatch(setNavIsActive(false))}>
+        <nav
+          className={navIsActive ? 'header__nav active' : 'header__nav'}
+          onClick={() => dispatch(setNavIsActive(false))}>
           <ul className="header-nav__nav-list">
-            <li className="header-nav__nav-item">
-              <NavLink to="/cosinuts/" className="header-nav__nav-link">
-                Главная
-              </NavLink>
-            </li>
-            <li className="header-nav__nav-item">
-              <NavLink to="/cosinuts/catalog" className="header-nav__nav-link">
-                Каталог
-              </NavLink>
-            </li>
-            <li className="header-nav__nav-item">
-              <NavLink to="/cosinuts/aboutUs" className="header-nav__nav-link">
-                О нас
-              </NavLink>
-            </li>
-            <li className="header-nav__nav-item">
-              <NavLink to="/cosinuts/aboutDelivery" className="header-nav__nav-link">
-                О доставке
-              </NavLink>
-            </li>
-            <li className="header-nav__nav-item">
-              <NavLink to="/cosinuts/shops" className="header-nav__nav-link">
-                Магазины
-              </NavLink>
-            </li>
-            <li className="header-nav__nav-item">
-              <NavLink to="/cosinuts/contacts" className="header-nav__nav-link">
-                Контакты
-              </NavLink>
-            </li>
+            {navList.map((item, index) => {
+              return (
+                <li className="header-nav__nav-item" key={index}>
+                  <NavLink to={`/cosinuts${item.link}`} className="header-nav__nav-link" onClick={() => window.scrollTo(0, 0)}>
+                    {item.name}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
           <ul className="header-nav__others-list">
-            <NavLink to="/cosinuts" className="header-nav__others-item">
-              <span className="header-nav__others-link">+7 (900) 232 32-32</span>
-            </NavLink>
-            <NavLink to="/cosinuts/liked" className="header-nav__others-item">
-              <span className="header-nav__others-link">Избранное</span>
-            </NavLink>
-            <NavLink to="/cosinuts/cart" className="header-nav__others-item" data-cart-total={3}>
-              <span className="header-nav__others-link">Корзина</span>
-            </NavLink>
+            {othersList.map((item, index) => {
+              return (
+                <NavLink to={`/cosinuts${item.link}`} className="header-nav__others-item" key={index} data-cart-total={item.dataCartTotal}>
+                  <span className="header-nav__others-link">{item.name}</span>
+                </NavLink>
+              );
+            })}
           </ul>
         </nav>
       </div>

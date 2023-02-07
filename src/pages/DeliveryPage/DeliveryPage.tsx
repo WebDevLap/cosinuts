@@ -1,4 +1,5 @@
 import React from 'react';
+
 import bigLogo from '../../assets/images/big-logo.svg'
 
 export const DeliveryPage: React.FC = () => {

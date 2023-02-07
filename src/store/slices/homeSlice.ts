@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type categoryItem = {
+export type CategoryItem = {
   id: number;
   title: string;
   subtitle: string;
@@ -12,12 +12,16 @@ type categoryItem = {
 
 interface HomeSliceState {
   activeCategory: number;
-  categoryItems: categoryItem[];
+  categoryItems: CategoryItem[];
+  homeSearch: string;
+  cardsIsLoading: boolean;
 }
 
 const initialState: HomeSliceState = {
   activeCategory: 0,
   categoryItems: [],
+  homeSearch: '',
+  cardsIsLoading: false,
 }
 
 const homeSlice = createSlice({
@@ -27,11 +31,17 @@ const homeSlice = createSlice({
     setActiveCategory: (state, action: PayloadAction<number>) => {
       state.activeCategory = action.payload;
     },
-    setCategoryItems: (state, action: PayloadAction<categoryItem[]>) => {
+    setCategoryItems: (state, action: PayloadAction<CategoryItem[]>) => {
       state.categoryItems = action.payload;
+    },
+    setHomeSearch: (state, action: PayloadAction<string>) => {
+      state.homeSearch = action.payload;
+    },
+    setCardsIsLoading: (state, action: PayloadAction<boolean>) => {
+      state.cardsIsLoading = action.payload;
     }
   }
 })
 
-export const { setActiveCategory, setCategoryItems } = homeSlice.actions;
+export const { setActiveCategory, setCategoryItems, setHomeSearch, setCardsIsLoading } = homeSlice.actions;
 export default homeSlice.reducer;

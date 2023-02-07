@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../../store/store';
 
 export const Sort: React.FC = () => {
+  const dispatch = useDispatch()
+
+  const activeCategory = useAppSelector(state => state.home.activeCategory)
   const categories = [
     'Все',
     'Сухофрукты экзотические',
@@ -13,11 +16,7 @@ export const Sort: React.FC = () => {
     'Снеки',
     'Семена бобовые',
     'Бакалея',
-  ];
-
-  const activeCategory = useAppSelector(state => state.home.activeCategory)
-  const dispatch = useDispatch()
-  
+  ];  
 
   return (
     <>
