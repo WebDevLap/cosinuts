@@ -491,7 +491,7 @@ body {
           .home-page-content__sort-list {
             display: flex;
             margin: 0 auto;
-            margin-bottom: 128px;
+            @include adaptiv-property('margin-bottom', 128, 31);
             overflow: auto;
             max-width: 1500px;
             width: 100%;
@@ -1171,4 +1171,9 @@ body {
       }
     }
   }
+}
+
+.skeleton{
+  width: 100%;
+
 }

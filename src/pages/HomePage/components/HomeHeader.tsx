@@ -13,7 +13,6 @@ export const HomeHeader: React.FC = () => {
 
   function inputKeyDown(e: React.KeyboardEvent) {
     if (e.key === 'Enter') {
-      window.scrollTo({ top: 1200, left: 0, behavior: 'smooth' });
       if(!inputRef.current) return
       dispatch(setHomeSearch(inputRef.current.value));
     }

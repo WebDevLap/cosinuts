@@ -22,6 +22,7 @@ export const HomePage: React.FC = () => {
   const activeCategory = useAppSelector((state) => state.home.activeCategory);
   const cardsIsLoading = useAppSelector((state) => state.home.cardsIsLoading);
   const [firstQsRender, setFirstQsRender] = React.useState<boolean>(true)
+  const homeHeaderInputRef = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     if(window.location.search){
@@ -65,6 +66,11 @@ export const HomePage: React.FC = () => {
       .then(() => dispatch(setCardsIsLoading(false)));
   }, [activeCategory, homeSearch]);
 
+  React.useEffect(() => {
+    if(!homeHeaderInputRef.current) return;
+    homeHeaderInputRef.current.scrollIntoView(true);
+  }, [homeSearch])
+
 
   return (
     <main className="home-page">
@@ -73,7 +79,7 @@ export const HomePage: React.FC = () => {
         <section className="home-page__content">
           <div className="home-page-content__container _container">
             <div className="home-page-content__content">
-              <h2 className="home-page-content__title">Наш ассортимент</h2>
+              <h2 className="home-page-content__title" ref={homeHeaderInputRef}>Наш ассортимент</h2>
               <Sort />
               <div className="home-page-content__cards">
                 {cardsIsLoading
@@ -85,7 +91,6 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
         </section>
-        <section className="home-page__nav"></section>
       </div>
     </main>
   );

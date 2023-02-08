@@ -3,9 +3,10 @@ import ContentLoader from "react-content-loader"
 
 const Skeleton = () => (
   <ContentLoader 
+    className="skeleton"
     speed={1.5}
     width={411}
-    height={710}
+    // height={710}
     viewBox="0 0 411 710"
     backgroundColor="#58f95a"
     foregroundColor="#fff157"
