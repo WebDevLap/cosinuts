@@ -14,7 +14,6 @@ export const Card: React.FC<CardProps> = ({id, title, subtitle, price, priceWith
   const [inCart, setInCart] = React.useState<boolean>(false)
   const [likeIsActive, setLikeIsActive] = React.useState<boolean>(false)
   
-
   return (
     <div className="card">
       {

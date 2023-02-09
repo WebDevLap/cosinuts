@@ -9,11 +9,11 @@ import { useDispatch } from 'react-redux';
 export const HomeHeader: React.FC = () => {
   const dispatch = useDispatch();
 
-  const inputRef = React.useRef<HTMLInputElement>(null)
+  const inputRef = React.useRef<HTMLInputElement>(null);
 
   function inputKeyDown(e: React.KeyboardEvent) {
     if (e.key === 'Enter') {
-      if(!inputRef.current) return
+      if (!inputRef.current) return;
       dispatch(setHomeSearch(inputRef.current.value));
     }
   }
@@ -44,8 +44,7 @@ export const HomeHeader: React.FC = () => {
             />
             <span
               onClick={() => {
-                window.scrollTo({ top: 1250, left: 0, behavior: 'smooth' });
-                if(!inputRef.current) return
+                if (!inputRef.current) return;
                 dispatch(setHomeSearch(inputRef.current.value));
               }}></span>
           </div>

@@ -21,8 +21,10 @@ export const HomePage: React.FC = () => {
   const categoryItems = useAppSelector((state) => state.home.categoryItems);
   const activeCategory = useAppSelector((state) => state.home.activeCategory);
   const cardsIsLoading = useAppSelector((state) => state.home.cardsIsLoading);
-  const [firstQsRender, setFirstQsRender] = React.useState<boolean>(true)
-  const homeHeaderInputRef = React.useRef<HTMLDivElement>(null)
+  const [firstQsRender, setFirstQsRender] = React.useState<boolean>(true);
+  const homeHeaderInputRef = React.useRef<HTMLDivElement>(null);
+  const [firstRenderInputScroll, setFirstRenderHeaderScroll] = React.useState<boolean>(true);
+  
 
   React.useEffect(() => {
     if(window.location.search){
@@ -30,6 +32,7 @@ export const HomePage: React.FC = () => {
 
       if(params.activeCategory){
         dispatch(setActiveCategory(+params.activeCategory))
+        
       }
     }
   }, [])
@@ -68,7 +71,13 @@ export const HomePage: React.FC = () => {
 
   React.useEffect(() => {
     if(!homeHeaderInputRef.current) return;
+    if(firstRenderInputScroll){
+      setFirstRenderHeaderScroll(false);
+      return;
+    }
     homeHeaderInputRef.current.scrollIntoView(true);
+    console.log(13123123213)
+
   }, [homeSearch])
 
 
@@ -83,7 +92,7 @@ export const HomePage: React.FC = () => {
               <Sort />
               <div className="home-page-content__cards">
                 {cardsIsLoading
-                  ? [...new Array(8)].map(() => <Skeleton />)
+                  ? [...new Array(8)].map((item, index) => <Skeleton key={index}/>)
                   : categoryItems.map((item, index) => {
                       return <Card {...item} key={index} />;
                     })}

@@ -15,7 +15,6 @@ interface HomeSliceState {
   categoryItems: CategoryItem[];
   homeSearch: string;
   cardsIsLoading: boolean;
-  homeToHeaderContentScroll: null;
 }
 
 const initialState: HomeSliceState = {
@@ -23,7 +22,6 @@ const initialState: HomeSliceState = {
   categoryItems: [],
   homeSearch: '',
   cardsIsLoading: false,
-  homeToHeaderContentScroll: null,
 }
 
 const homeSlice = createSlice({
