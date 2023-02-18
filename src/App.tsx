@@ -16,11 +16,11 @@ export const App: React.FC = () => {
     <div className="wrapper">
       <Header/>
       <Routes>
-        <Route path='/cosinuts/' element={<HomePage/>}/>
-        <Route path='/cosinuts/aboutUs' element={<AboutPage/>}/>
-        <Route path='/cosinuts/aboutDelivery' element={<DeliveryPage/>}/>
-        <Route path='/cosinuts/shops' element={<ShopsPage/>}/>
-        <Route path='/cosinuts/contacts' element={<ContactsPage/>}/>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/aboutUs' element={<AboutPage/>}/>
+        <Route path='/aboutDelivery' element={<DeliveryPage/>}/>
+        <Route path='/shops' element={<ShopsPage/>}/>
+        <Route path='/contacts' element={<ContactsPage/>}/>
         <Route path='*' element={<NotFoundPage/>}/>
       </Routes>
       <Nav/>

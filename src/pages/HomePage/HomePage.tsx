@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppSelector } from '../../store/store';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import qs from 'qs'
+import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 
 import { Sort } from './components/Sort';

@@ -10,7 +10,7 @@ export const NotFoundPage = () => {
           <img src="https://d-element.ru/upload/iblock/883/oblozhka.png" alt="error404Img" />
         </div>
         <h2 className='not-found-page__subtitle'>Извините, страница не найдена. Вы можете перейти на главную страницу сайта</h2>
-        <NavLink to='/cosinuts/' onClick={() => window.scrollTo(0,0)} className="not-found-page__btn">Перейти на главную</NavLink>
+        <NavLink to='/' onClick={() => window.scrollTo(0,0)} className="not-found-page__btn">Перейти на главную</NavLink>
       </div>
     </div>
   )

@@ -37,7 +37,7 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header__container _container">
-        <NavLink to="/cosinuts/" className="header__logo">
+        <NavLink to="/" className="header__logo">
           <img src={logo} alt="logo" />
         </NavLink>
         <div
@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
             {navList.map((item, index) => {
               return (
                 <li className="header-nav__nav-item" key={index}>
-                  <NavLink to={`/cosinuts${item.link}`} className="header-nav__nav-link" onClick={() => window.scrollTo(0, 0)}>
+                  <NavLink to={item.link} className="header-nav__nav-link" onClick={() => window.scrollTo(0, 0)}>
                     {item.name}
                   </NavLink>
                 </li>
@@ -67,7 +67,7 @@ export const Header: React.FC = () => {
           <ul className="header-nav__others-list">
             {othersList.map((item, index) => {
               return (
-                <NavLink to={`/cosinuts${item.link}`} className="header-nav__others-item" key={index} data-cart-total={item.dataCartTotal}>
+                <NavLink to={item.link} className="header-nav__others-item" key={index} data-cart-total={item.dataCartTotal}>
                   <span className="header-nav__others-link">{item.name}</span>
                 </NavLink>
               );
